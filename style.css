@@ -36,6 +36,20 @@ footer {
   text-align: center;
   padding: 10px;
 }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* Fundo com imagem cobrindo toda a tela */
+  background-image: url('imagens/galeria1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  /* Cor de fundo para carregamento */
+  background-color: #f8f8f8;
+  color: #333;
+}
 
 .galeria {
   display: grid;

@@ -50,19 +50,55 @@ body {
   background-color: #f8f8f8;
   color: #333;
 }
-
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+/* 1. Container principal do carrossel */
+.carousel {
+  position: relative;    /* Necessário para as setas ficarem "presas" dentro dele */
+  max-width: 800px;     /* Ajuste o tamanho conforme seu churrasco pedir */
+  margin: 20px auto;    /* Centraliza na tela */
+  border: 5px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  overflow: hidden;     /* Garante que nada saia das bordas */
 }
 
-.galeria img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+/* 2. Estilo das imagens */
+.slide {
+  display: none;        /* ESCONDE todas as fotos por padrão */
+  width: 100%;          /* Faz a foto ocupar toda a largura do container */
+  height: 400px;        /* Altura fixa (ajuste como quiser) */
+  object-fit: cover;    /* Corta a imagem sem distorcer se o tamanho variar */
+}
+
+/* 3. A classe que MOSTRA a foto atual */
+.active {
+  display: block;       /* Só a que tiver essa classe aparecerá */
+  animation: fade 0.5s; /* Opcional: um efeito suave de aparecer */
+}
+
+/* 4. Estilo das Setas (Botões) */
+.prev, .next {
+  position: absolute;   /* Flutuam sobre a imagem */
+  top: 50%;             /* Ficam no meio da altura */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo preto transparente */
+  color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.prev { left: 0; border-radius: 0 3px 3px 0; }
+.next { right: 0; border-radius: 3px 0 0 3px; }
+
+.prev:hover, .next:hover {
+  background-color: #ff4500; /* Cor de brasa ao passar o mouse */
+}
+
+/* Efeito visual simples */
+@keyframes fade {
+  from { opacity: 0.4; } 
+  to { opacity: 1; }
 }
 .whatsapp-float {
   position: fixed;

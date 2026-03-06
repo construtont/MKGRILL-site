@@ -38,12 +38,18 @@
 
   <section id="galeria">
     <h2>Galeria</h2>
-    <div class="galeria">
-      <img src="churrasco_1.jpg" alt="Foto de churrasco 1">
-      <img src="churrasco_2.jpg" alt="Foto de churrasco 2">
-      <img src="churrasco_3.jpg" alt="Foto de churrasco 3">
-      <img src="churrasco_4.jpg" alt="Foto de churrasco 4">
-    </div>
+    <div class="carousel">
+      <div class="carousel">
+  <div class="carousel-container">
+    <img src="churrasco_1.jpg" class="slide active">
+    <img src="churrasco_2.jpg" class="slide">
+    <img src="churrasco_3.jpg" class="slide">
+     <img src="churrasco_4.jpg" class="slide">
+  </div>
+
+  <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
+  <button class="next" onclick="mudarSlide(1)">&#10095;</button>
+</div>
   </section>
 
   <section id="contato">

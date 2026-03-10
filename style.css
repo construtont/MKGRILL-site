@@ -1,157 +1,91 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f8f8f8;
-  color: #333;
-}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('imagens/galeria1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-color: #f8f8f8;
+    color: #333;
+  }
 
-header {
-  background: #dd4343;
-  color: rgba(000);
-  padding: 20px;
-  text-align: center;
-}
+  header {
+    background: #dd4343;
+    color: #000;
+    padding: 20px;
+    text-align: center;
+  }
 
-nav a {
-  margin: 0 15px;
-  color: #131212;
-  text-decoration: none;
-  font-weight: bold;
-}
+  nav a {
+    margin: 0 15px;
+    color: #131212;
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
-}
+  /* Estilo do Carrossel */
+  .carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
 
-h2 {
-  color: #2c1414;
-}
+  .slide {
+    display: none;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+  }
 
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  /* Fundo com imagem cobrindo toda a tela */
-  background-image: url('imagens/galeria1.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
-  /* Cor de fundo para carregamento */
-  background-color: #f8f8f8;
-  color: #333;
-}
-/* 1. Container principal do carrossel */
-.carousel {
-  position: relative;    /* Necessário para as setas ficarem "presas" dentro dele */
-  max-width: 800px;     /* Ajuste o tamanho conforme seu churrasco pedir */
-  margin: 20px auto;    /* Centraliza na tela */
-  border: 5px solid #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  overflow: hidden;     /* Garante que nada saia das bordas */
-}
+  .active {
+    display: block;
+    animation: fade 0.5s;
+  }
 
-/* 2. Estilo das imagens */
-.slide {
-  display: none;        /* ESCONDE todas as fotos por padrão */
-  width: 100%;          /* Faz a foto ocupar toda a largura do container */
-  height: 400px;        /* Altura fixa (ajuste como quiser) */
-  object-fit: cover;    /* Corta a imagem sem distorcer se o tamanho variar */
-}
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    transition: 0.3s;
+  }
 
-/* 3. A classe que MOSTRA a foto atual */
-.active {
-  display: block;       /* Só a que tiver essa classe aparecerá */
-  animation: fade 0.5s; /* Opcional: um efeito suave de aparecer */
-}
+  .prev { left: 0; border-radius: 0 5px 5px 0; }
+  .next { right: 0; border-radius: 5px 0 0 5px; }
 
-/* 4. Estilo das Setas (Botões) */
-.prev, .next {
-  position: absolute;   /* Flutuam sobre a imagem */
-  top: 50%;             /* Ficam no meio da altura */
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6); /* Fundo preto transparente */
-  color: white;
-  padding: 16px;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  transition: 0.3s;
-}
+  .prev:hover, .next:hover { background-color: #ff4500; }
 
-.prev { left: 0; border-radius: 0 3px 3px 0; }
-.next { right: 0; border-radius: 3px 0 0 3px; }
+  @keyframes fade {
+    from { opacity: 0.4; } 
+    to { opacity: 1; }
+  }
 
-.prev:hover, .next:hover {
-  background-color: #ff4500; /* Cor de brasa ao passar o mouse */
-}
-
-/* Efeito visual simples */
-@keyframes fade {
-  from { opacity: 0.4; } 
-  to { opacity: 1; }
-}
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 25px;
-  right: 25px;
-  background-color: #25d366;
-  color: white;
-  font-size: 32px;
-  text-align: center;
-  line-height: 60px;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  z-index: 100;
-  text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 25px;
-  right: 25px;
-  background-color: #25d366;
-  color: white;
-  font-size: 32px;
-  text-align: center;
-  line-height: 60px;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  z-index: 100;
-  text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  /* Fundo com imagem cobrindo toda a tela */
-  background-image: url('imagens/galeria1.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
-  /* Cor de fundo para carregamento */
-  background-color: #f8f8f8;
-  color: #333;
-}
+  /* WhatsApp Flutuante */
+  .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    z-index: 100;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  }
+</style>

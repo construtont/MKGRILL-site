@@ -41,7 +41,6 @@
     <div class="carousel">
       <div class="carousel">
   <div class="carousel-container">
-    <img src="churrasco_1.jpg" class="slide active">
     <img src="churrasco_2.jpg" class="slide">
     <img src="churrasco_3.jpg" class="slide">
      <img src="churrasco_4.jpg" class="slide">
@@ -76,4 +75,32 @@
     💬
   </a>
 </body>
+<script>
+  // Variável para controlar qual foto está aparecendo (começa na 0)
+  let slideIndex = 0;
+
+  function mudarSlide(direcao) {
+    // Seleciona todos os elementos que têm a classe 'slide'
+    const slides = document.querySelectorAll('.slide');
+    
+    // 1. Remove a classe 'active' da foto atual para ela sumir
+    slides[slideIndex].classList.remove('active');
+
+    // 2. Soma ou subtrai o índice (direcao será 1 ou -1)
+    slideIndex += direcao;
+
+    // 3. Lógica de "Loop":
+    // Se passar da última foto, volta para a primeira (índice 0)
+    if (slideIndex >= slides.length) {
+      slideIndex = 0;
+    }
+    // Se voltar antes da primeira foto, pula para a última
+    if (slideIndex < 0) {
+      slideIndex = slides.length - 1;
+    }
+
+    // 4. Adiciona a classe 'active' na nova foto para ela aparecer
+    slides[slideIndex].classList.add('active');
+  }
+</script>
 

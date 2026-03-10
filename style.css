@@ -27,19 +27,17 @@
   }
 
   /* Estilo do Carrossel */
-  .carousel {
-    position: relative;
-    max-width: 800px;
-    margin: 20px auto;
-    border: 5px solid #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    overflow: hidden;
+  .carousel-container {
+  width: 100%;
+  height: 450px; /* Garante que o espaço da foto exista */
+  background-color: #ddd; /* Cor de fundo caso a foto falhe */
+
   }
 
   .slide {
     display: none;
     width: 100%;
-    height: 450px;
+    height: 100%;
     object-fit: cover;
   }
 

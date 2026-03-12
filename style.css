@@ -28,11 +28,12 @@
 
   /* Estilo do Carrossel */
   .carousel-container {
-  position: relative; /*ESSENCIAL: define o limite para os botões absolute*/  
+  position: relative; /* <--- OBRIGATÓRIO: isso prende as setas dentro do carrossel */
   width: 100%;
-  height: 450px; /* Garante que o espaço da foto exista */
-  background-color: #ddd; /* Cor de fundo caso a foto falhe */
-  overflow: hidden; /* Garante que nada saia da caixa */ 
+  max-width: 800px; /* Sugerido para não ficar gigante em telas grandes */
+  height: 450px;
+  margin: 0 auto; /* Centraliza o carrossel na página */
+  overflow: hidden;
   }
 
   .slide {

@@ -27,14 +27,17 @@
   }
 
   /* Estilo do Carrossel */
-  .carousel-container {
-  position: relative; /* <--- OBRIGATÓRIO: isso prende as setas dentro do carrossel */
+  .carousel-container{
+  position: relative; /* Isso é o mais importante */
   width: 100%;
-  max-width: 800px; /* Sugerido para não ficar gigante em telas grandes */
-  height: 450px;
-  margin: 0 auto; /* Centraliza o carrossel na página */
-  overflow: hidden;
-  }
+  height: 450px; 
+  background-color: #ddd;
+  border: 5px solid red; /* Linha de diagnóstico: ajuda a ver o limite */
+  display: flex;         /* Ajuda a alinhar o conteúdo interno */
+  align-items: center;   /* Centraliza tudo verticalmente no container */
+  justify-content: center;
+}
+  
 
   .slide {
     display: none;

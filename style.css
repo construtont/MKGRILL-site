@@ -28,10 +28,11 @@
 
   /* Estilo do Carrossel */
   .carousel-container {
+  position: relative; /*ESSENCIAL: define o limite para os botões absolute*/  
   width: 100%;
   height: 450px; /* Garante que o espaço da foto exista */
   background-color: #ddd; /* Cor de fundo caso a foto falhe */
-
+  overflow: hidden; /* Garante que nada saia da caixa */ 
   }
 
   .slide {

@@ -57,7 +57,7 @@ nav {
   text-align: center;
 }
 
-/* --- ALTERADO: Links agora são amarelos com destaque --- */
+/* --- ALTERADO: Links agora é amarelo com destaque --- */
 nav a {
   margin: 0 15px;
   color: #FFC107;         /* Letras amarelas para combinar com o topo */
@@ -83,6 +83,7 @@ section {
 /* Títulos das seções combinando com o tema escuro */
 h2 {
   color: #131212;
+  text-align: center;
 }
 
 footer {
@@ -92,18 +93,32 @@ footer {
   padding: 15px;
 }
 
-/* galeria */
+/* --- NOVO: Configuração do Carrossel em CSS Puro --- */
 .galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-.galeria img {
+  display: flex;                   /* Coloca as imagens em uma linha horizontal */
+  overflow-x: auto;                /* Ativa a barra de rolagem horizontal */
+  scroll-snap-type: x mandatory;   /* Faz as imagens "colarem" na tela ao deslizar */
+  scroll-behavior: smooth;         /* Rolagem suave */
+  gap: 15px;                       /* Espaço entre as fotos do carrossel */
+  padding: 10px 0;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  
+  /* Esconde a barra de rolagem padrão no Chrome/Safari/Firefox para visual limpo */
+  scrollbar-width: none; 
+}
+.galeria::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Estilo das imagens dentro do carrossel */
+.galeria img {
+  flex: 0 0 85%;                  /* Mostra 85% da imagem, deixando um pedaço da próxima visível */
+  max-width: 500px;               /* Largura máxima para não ficar gigante em telas grandes */
+  height: 350px;                  /* Altura fixa imponente para as fotos */
+  object-fit: cover;              /* Ajusta a foto sem distorcer */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  scroll-snap-align: center;      /* Centraliza a imagem focada */
 }
 
 /* botão flutuante WhatsApp */

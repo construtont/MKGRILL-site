@@ -14,9 +14,10 @@ body {
   color: #333;
 }
 
+/* --- ALTERADO: Header agora é amarelo churrascaria --- */
 header {
-  background: #dd4343;
-  color: #fff;
+  background: #FFC107; /* Amarelo vivo e marcante */
+  color: #000000;      /* Textos alternativos dentro do header ficam pretos */
   padding: 20px;
   text-align: center;
 }
@@ -49,12 +50,28 @@ header {
   border: 0;
 }
 
-/* nav */
+/* --- NOVO: Criada a barra preta transparente para o menu --- */
+nav {
+  background: rgba(0, 0, 0, 0.75); /* Faixa preta fumê elegante */
+  padding: 12px 0;
+  text-align: center;
+}
+
+/* --- ALTERADO: Links agora são amarelos com destaque --- */
 nav a {
   margin: 0 15px;
-  color: #131212;
+  color: #FFC107;         /* Letras amarelas para combinar com o topo */
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;  /* Necessário para o efeito de leve crescimento */
+}
+
+/* --- NOVO: Efeito ao passar o mouse no menu --- */
+nav a:hover {
+  color: #FFFFFF;         /* A letra acende em branco puro */
+  transform: scale(1.05); /* Dá um leve zoom no link */
 }
 
 section {
@@ -63,15 +80,16 @@ section {
   margin: auto;
 }
 
+/* Títulos das seções combinando com o tema escuro */
 h2 {
-  color: #2c1414;
+  color: #131212;
 }
 
 footer {
-  background: #333;
+  background: #131212; /* Preto suave combinando com o resto do tema */
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
 }
 
 /* galeria */

@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mkgrill - Churrasco Profissional</title
-    <section id="galeria"> 
-      <div class="galeria">
-   </div>
+  <title>Mkgrill - Churrasco Profissional</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
     <h1>Mkgrill</h1>
     <p>O sabor do churrasco profissional na sua casa</p>
@@ -39,16 +37,14 @@
   <section id="galeria">
     <h2>Galeria</h2>
     <div class="carousel">
-      <div class="carousel">
-  <div class="carousel-container">
-    <img src="churrasco_2.jpg" class="slide">
-    <img src="churrasco_3.jpg" class="slide">
-     <img src="churrasco_4.jpg" class="slide">
-  
-  <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
-  <button class="next" onclick="mudarSlide(1)">&#10095;</button>
-    
-</div>
+      <div class="carousel-container">
+        <img src="churrasco_2.jpg" class="slide active" alt="Churrasco 2">
+        <img src="churrasco_3.jpg" class="slide" alt="Churrasco 3">
+        <img src="churrasco_4.jpg" class="slide" alt="Churrasco 4">
+      </div>
+      <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
+      <button class="next" onclick="mudarSlide(1)">&#10095;</button>
+    </div>
   </section>
 
   <section id="contato">
@@ -56,51 +52,46 @@
     <p>Email: mkgrilleventos@gmail.com</p>
     <p>Facebook: <a href="https://facebook.com/mkgrilleventos" target="_blank">@mkgrilleventos</a></p>
     <p>WhatsApp: (21) 98922-1975 / 98690-9012</p>
+    <a href="https://wa.me/5521989221975" class="whatsapp-float" target="_blank">
+  <img src="imagens/whatsapp-icon.svg" alt="WhatsApp" style="width: 35px; margin-top: 12px;">
+  
+</a>
   </section>
 
   <footer>
     <p>© 2025 Mkgrill - Todos os direitos reservados</p>
   </footer>
-</body>
-</html>
-  <a href="https://wa.me/5521989221975" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
-    💬
-  </a>
-</body>
-</html>
+
   <a href="https://wa.me/5521989221975?text=Olá%2C%20gostaria%20de%20um%20orçamento%20para%20churrasco%20em%20domicílio.%20Vi%20seu%20site%20Mkgrill!" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
-  💬
-</a>
-
     💬
   </a>
+
+  <script>
+    let slideIndex = 0;
+
+    function mudarSlide(direcao) {
+      const slides = document.querySelectorAll('.slide');
+      
+      // Proteção caso não encontre imagens
+      if (slides.length === 0) return;
+
+      // Remove a classe active da foto atual
+      slides[slideIndex].classList.remove('active');
+
+      // Atualiza o índice
+      slideIndex += direcao;
+
+      // Sistema de Loop
+      if (slideIndex >= slides.length) {
+        slideIndex = 0;
+      }
+      if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+      }
+
+      // Adiciona a classe active na nova foto
+      slides[slideIndex].classList.add('active');
+    }
+  </script>
 </body>
-<script>
-  // Variável para controlar qual foto está aparecendo (começa na 0)
-  let slideIndex = 0;
-
-  function mudarSlide(direcao) {
-    // Seleciona todos os elementos que têm a classe 'slide'
-    const slides = document.querySelectorAll('.slide');
-    
-    // 1. Remove a classe 'active' da foto atual para ela sumir
-    slides[slideIndex].classList.remove('active');
-
-    // 2. Soma ou subtrai o índice (direcao será 1 ou -1)
-    slideIndex += direcao;
-
-    // 3. Lógica de "Loop":
-    // Se passar da última foto, volta para a primeira (índice 0)
-    if (slideIndex >= slides.length) {
-      slideIndex = 0;
-    }
-    // Se voltar antes da primeira foto, pula para a última
-    if (slideIndex < 0) {
-      slideIndex = slides.length - 1;
-    }
-
-    // 4. Adiciona a classe 'active' na nova foto para ela aparecer
-    slides[slideIndex].classList.add('active');
-  }
-</script>
-
+</html>

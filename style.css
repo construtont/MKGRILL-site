@@ -1,5 +1,8 @@
 /* style.css - versão limpa com suporte a logo no header */
+ construtont-patch-1
 
+
+ main
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -11,6 +14,7 @@ body {
   background-attachment: fixed;
   background-position: center center;
   /* Cor de fundo para carregamento */
+construtont-patch-1
   background-color: #cfb67f;
   color: #333;
 }
@@ -18,6 +22,16 @@ body {
 header {
   background: #ffba25;
   color: #010200;
+
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+/* --- ALTERADO: Header agora é amarelo churrascaria --- */
+header {
+  background: #FFC107; /* Amarelo vivo e marcante */
+  color: #000000;      /* Textos alternativos dentro do header ficam pretos */
+ main
   padding: 20px;
   text-align: center;
 }
@@ -50,12 +64,37 @@ header {
   border: 0;
 }
 
+construtont-patch-1
 /* nav */
 nav a {
   margin: 0 15px;
   color: #131212;
   text-decoration: none;
   font-weight: bold;
+
+/* --- NOVO: Criada a barra preta transparente para o menu --- */
+nav {
+  background: rgba(0, 0, 0, 0.75); /* Faixa preta fumê elegante */
+  padding: 12px 0;
+  text-align: center;
+}
+
+/* --- ALTERADO: Links agora são amarelos com destaque --- */
+nav a {
+  margin: 0 15px;
+  color: #FFC107;         /* Letras amarelas para combinar com o topo */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;  /* Necessário para o efeito de leve crescimento */
+}
+
+/* --- NOVO: Efeito ao passar o mouse no menu --- */
+nav a:hover {
+  color: #FFFFFF;         /* A letra acende em branco puro */
+  transform: scale(1.05); /* Dá um leve zoom no link */
+ main
 }
 
 section {
@@ -80,6 +119,23 @@ footer {
 }
 
 /* galeria antiga/grid caso use em outro lugar */
+
+}
+
+/* Títulos das seções combinando com o tema escuro */
+h2 {
+  color: #131212;
+}
+
+footer {
+  background: #131212; /* Preto suave combinando com o resto do tema */
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* galeria */
+main
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -114,6 +170,7 @@ footer {
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
+ construtont-patch-1
 
 /* ==========================================
    NOVO: CONFIGURAÇÃO DO CARROSSEL RESPONSIVO
@@ -179,3 +236,5 @@ footer {
 
 .prev { left: 10px; }
 .next { right: 10px; }
+
+ main

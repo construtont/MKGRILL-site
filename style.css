@@ -1,4 +1,8 @@
 /* style.css - versão limpa com suporte a logo no header */
+ construtont-patch-1
+
+
+ main
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -10,6 +14,15 @@ body {
   background-attachment: fixed;
   background-position: center center;
   /* Cor de fundo para carregamento */
+construtont-patch-1
+  background-color: #cfb67f;
+  color: #333;
+}
+
+header {
+  background: #ffba25;
+  color: #010200;
+
   background-color: #f8f8f8;
   color: #333;
 }
@@ -18,6 +31,7 @@ body {
 header {
   background: #FFC107; /* Amarelo vivo e marcante */
   color: #000000;      /* Textos alternativos dentro do header ficam pretos */
+ main
   padding: 20px;
   text-align: center;
 }
@@ -50,6 +64,14 @@ header {
   border: 0;
 }
 
+construtont-patch-1
+/* nav */
+nav a {
+  margin: 0 15px;
+  color: #131212;
+  text-decoration: none;
+  font-weight: bold;
+
 /* --- NOVO: Criada a barra preta transparente para o menu --- */
 nav {
   background: rgba(0, 0, 0, 0.75); /* Faixa preta fumê elegante */
@@ -72,12 +94,32 @@ nav a {
 nav a:hover {
   color: #FFFFFF;         /* A letra acende em branco puro */
   transform: scale(1.05); /* Dá um leve zoom no link */
+ main
 }
 
 section {
   padding: 40px 20px;
   max-width: 800px;
   margin: auto;
+  background-color: rgba(12, 11, 11, 0.151); /* Um fundo levemente transparente para dar leitura sobre a foto de fundo */
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #2c1414;
+}
+
+footer {
+  background: #333;
+  color: rgba(195, 207, 28, 0.719);
+  text-align: center;
+  padding: 10px;
+}
+
+/* galeria antiga/grid caso use em outro lugar */
+
 }
 
 /* Títulos das seções combinando com o tema escuro */
@@ -93,6 +135,7 @@ footer {
 }
 
 /* galeria */
+main
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -127,3 +170,71 @@ footer {
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
+ construtont-patch-1
+
+/* ==========================================
+   NOVO: CONFIGURAÇÃO DO CARROSSEL RESPONSIVO
+   ========================================== */
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Esconde todas as imagens por padrão */
+.slide {
+  display: none;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Altura padrão para CELULARES */
+.slide {
+  height: 250px;
+}
+
+/* Altura para COMPUTADORES e telas maiores */
+@media (min-width: 768px) {
+  .slide {
+    height: 450px;
+  }
+}
+
+/* Mostra apenas a imagem que tiver a classe 'active' */
+.slide.active {
+  display: block;
+}
+
+/* Botões de navegação (Setas) */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(247, 230, 3, 0.8); /* Vermelho Mkgrill ao passar o mouse */
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+ main
